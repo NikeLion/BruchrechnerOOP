@@ -44,20 +44,65 @@ namespace Bruch
              
         }
 
-        public void subtrahieren(Bruch bruch)
+        public Bruch subtrahieren(Bruch bruch2)
         {
+            int zaehl = 0;
+            int nenn = 1;
+            Bruch ergebnis = null;
 
+            zaehl = this.Zaehler * bruch2.Nenner - bruch2.Zaehler * this.Nenner;
+            nenn = this.Nenner * bruch2.Nenner;
+            try
+            {
+                ergebnis = new Bruch(zaehl, nenn);
+            }
+            catch (Exception ex)
+            {
+                ergebnis = new Bruch(zaehl, 1);
+            }
+
+            return ergebnis;
         }
 
-        public void dividieren(Bruch bruch)
+        public Bruch dividieren(Bruch bruch2)
         {
+            int zaehl = 0;
+            int nenn = 1;
+            Bruch ergebnis = null;
 
+            zaehl = this.Zaehler * bruch2.Nenner;
+            nenn = bruch2.Zaehler * this.Nenner;
+            try
+            {
+                ergebnis = new Bruch(zaehl, nenn);
+            }
+            catch (Exception ex)
+            {
+                ergebnis = new Bruch(zaehl, 1);
+            }
+            return ergebnis;
         }
-        public void multiplizieren(Bruch bruch)
+        public Bruch multiplizieren(Bruch bruch2)
         {
+            int zaehl = 0;
+            int nenn = 1;
+            Bruch ergebnis = null;
 
+            zaehl = this.Zaehler * bruch2.Zaehler;
+            nenn = this.Nenner * bruch2.Nenner;
+
+            try
+            {
+                ergebnis = new Bruch(zaehl, nenn);
+            }
+            catch (Exception ex)
+            {
+                ergebnis = new Bruch(zaehl, 1);
+            }
+
+            return ergebnis;
         }
-        public void kuerzen()
+        public Bruch kuerzen()
         {
             int max = (this.Zaehler > this.Nenner) ? this.Zaehler: this.Nenner;
 
