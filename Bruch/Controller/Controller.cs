@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Bruch
 {
-    class Program
+    class Controller
     {
-        static void Main(string[] args)
+        static void run()
         {
-            Controller controller = new Controller();
-
+            
 
         }
     }

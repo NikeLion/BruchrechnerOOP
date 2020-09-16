@@ -11,40 +11,37 @@ namespace Bruch
     class Bruch
     {
         //Attribute
-        private int zaehler;
-        private int nenner;
+        private int _zaehler;
+        private int _nenner;
 
 
-        //Konstruktoren
+        #region Konstruktoren
         public Bruch(int zaehler, int nenner)
         {
-            this.setZaehler(zaehler);
-            this.setNenner(nenner);
+            this.Zaehler = zaehler;
+            this.Nenner = nenner;
         }
 
-
-        //Selektoren
-        public int getZaehler()
+        public Bruch()
         {
-            return zaehler;
-        }
-        public void setZaehler(int zaehler)
-        {
-            this.zaehler = zaehler;
-        }
-        public int getNenner()
-        {
-            return nenner;
-        }
-        public void setNenner(int nenner)
-        {
-            this.nenner = nenner;
+            this.Zaehler = 1;
+            this.Nenner = 1;
         }
 
-        //Funktionen
+        #endregion
+
+        #region Selektoren
+        public int Zaehler { get => _zaehler; set => _zaehler = value; }
+        public int Nenner { get => _nenner; set => _nenner = value; }
+        #endregion
+
+        #region Funktionen
         public void addieren(Bruch bruch)
         {
-
+            Bruch ergebnis = new Bruch();
+            ergebnis.Zaehler = this.Nenner * bruch.Zaehler + bruch.Nenner * this.Zaehler;
+            ergebnis.Nenner= this.Nenner * bruch.Nenner;
+             
         }
 
         public void subtrahieren(Bruch bruch)
@@ -62,7 +59,14 @@ namespace Bruch
         }
         public void kuerzen()
         {
+            int max = (this.Zaehler > this.Nenner) ? this.Zaehler: this.Nenner;
 
+
+            for (int index = 0; index < max; index++)
+            {
+
+            }
         }
+        #endregion
     }
 }
